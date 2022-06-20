@@ -10,7 +10,7 @@ function validaLogin(event){
     if(user == "admin" && pass == "admin"){
         isLogado = true;
         alert("Bem vindo, Administrador!");
-        window.location.href = "/login/adm/adm.html";
+        window.location.href = "login/adm/adm.html";
     } else if (user == "diretor" && pass == "diretor"){
         isLogado = true;
         alert("Bem vindo, Diretor!");

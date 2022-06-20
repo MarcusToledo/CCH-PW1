@@ -10,15 +10,15 @@ function validaLogin(event){
     if(user == "admin" && pass == "admin"){
         isLogado = true;
         alert("Bem vindo, Administrador!");
-        window.location = "/login/adm/adm.html";
+        window.location.href = "/login/adm/adm.html";
     } else if (user == "diretor" && pass == "diretor"){
         isLogado = true;
         alert("Bem vindo, Diretor!");
-        window.location = "/login/diretor/diretor.html";
+        window.location.href = "/login/diretor/diretor.html";
     } else if (user == "respo1" && pass == "respo1"){
         isLogado = true;
         alert("Bem vindo, Responsável!");
-        window.location = "/login/responsaveis/respo.html";
+        window.location.href = "/login/responsaveis/respo.html";
     }
 
     if(!isLogado){

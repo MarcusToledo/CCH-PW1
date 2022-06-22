@@ -21,11 +21,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="styles/style.css" />
-    <title>Cadastro de crianças</title>
+    <title>Matriculas</title>
 
     <script>
       $(function () {
-        $("#navbar").load("/login/styles/navbar/navbar.html");
+        $("#navbar").load("../../login/styles/navbar/navbar.html");
       });
     </script>
   </head>
@@ -49,14 +49,14 @@
               href="#"
               class="btn btn-primary btn-md pull-right"
               data-toggle="modal"
-              data-target="#modalAddCrianca"
+              data-target="#modalValidaEnder"
               ><b>+</b> Adicionar</a
             >
             <tr>
               <th>ID</th>
-              <th>Nome</th>
+              <th>Nome Aluno</th>
               <th>Nome Responsável</th>
-              <th>Bairro</th>
+              <th class="text-center">Aprovado</th>
               <th class="text-center">Editar</th>
             </tr>
           </thead>
@@ -64,13 +64,15 @@
             <td>1</td>
             <td>Joãozinho da Silva</td>
             <td>Bruno da Silva</td>
-            <td>Centro Norte</td>
+            <td class="text-center">
+              <i class="glyphicon glyphicon-ok-sign sucess-green"></i>
+            </td>
             <td class="text-center">
               <a class="btn btn-info btn-xs" href="#"
                 ><span class="glyphicon glyphicon-edit"></span> Editar</a
               >
-              <a href="#" class="btn btn-danger btn-xs"
-                ><span class="glyphicon glyphicon-remove"></span> Del</a
+              <a href="#" class="btn btn-warning btn-xs"
+                ><span class="glyphicon glyphicon-repeat"></span> Revalidar</a
               >
             </td>
           </tr>
@@ -78,13 +80,15 @@
             <td>2</td>
             <td>Lucas Fernando Souza</td>
             <td>Maria Souza</td>
-            <td>Centro Sul</td>
+            <td class="text-center">
+              <i class="glyphicon glyphicon-remove-sign bad-red"></i>
+            </td>
             <td class="text-center">
               <a class="btn btn-info btn-xs" href="#"
                 ><span class="glyphicon glyphicon-edit"></span> Editar</a
               >
-              <a href="#" class="btn btn-danger btn-xs"
-                ><span class="glyphicon glyphicon-remove"></span> Del</a
+              <a href="#" class="btn btn-warning btn-xs"
+                ><span class="glyphicon glyphicon-repeat"></span> Revalidar</a
               >
             </td>
           </tr>
@@ -92,23 +96,25 @@
             <td>3</td>
             <td>Vinicius Mendez</td>
             <td>João Mendez</td>
-            <td>Bairro das torres</td>
+            <td class="text-center">
+              <i class="glyphicon glyphicon-ok-sign sucess-green"></i>
+            </td>
             <td class="text-center">
               <a class="btn btn-info btn-xs" href="#"
                 ><span class="glyphicon glyphicon-edit"></span> Editar</a
               >
-              <a href="#" class="btn btn-danger btn-xs"
-                ><span class="glyphicon glyphicon-remove"></span> Del</a
+              <a href="#" class="btn btn-warning btn-xs"
+                ><span class="glyphicon glyphicon-repeat"></span> Revalidar</a
               >
             </td>
           </tr>
         </table>
       </div>
     </div>
-    <!-- Modal add creche -->
+    <!-- Modal valida ender -->
     <div
       class="modal fade"
-      id="modalAddCrianca"
+      id="modalValidaEnder"
       tabindex="-1"
       role="dialog"
       aria-labelledby="ModalCenterTitle"
@@ -117,79 +123,57 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-              Cadastro de crianças
-            </h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Matricula</h5>
           </div>
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="text-modal-name-kid">Nome Completo</label>
+                <label for="select-modal-name-creche">Creche</label>
+                <select
+                  id="select-modal-name-creche"
+                  name="select-modal-name-creche"
+                  class="form-control"
+                  onchange="javascript:completaInputs()"
+                >
+                  <option value="Sonho de Infância">Sonho de Infância</option>
+                  <option value="Estrela Cadente">Estrela Cadente</option>
+                  <option value="Mundo da Criança">Mundo da Criança</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="text-modal-name-bairro">Bairro da creche</label>
                 <input
-                  id="text-modal-name-kid"
-                  name="text-modal-name-kid"
-                  placeholder="João da Silva"
+                  id="text-modal-name-bairro"
+                  name="text-modal-name-bairro"
                   type="text"
                   class="form-control"
                 />
               </div>
               <div class="form-group">
-                <label for="text-modal-num-nascimento">N° RG</label>
-                <input
-                  id="text-modal-num-nascimento"
-                  name="text-modal-num-nascimento"
-                  placeholder="12345678-9"
-                  type="text"
+                <label for="select-modal-name-crianca">Criança</label>
+                <select
+                  id="select-modal-name-crianca"
+                  name="select-modal-name-crianca"
                   class="form-control"
-                />
+                  onchange="javascript:completaInputCrianca()"
+                >
+                  <option value="Joãozinho da Silva">Joãozinho da Silva</option>
+                  <option value="Lucas Fernando Souza">
+                    Lucas Fernando Souza
+                  </option>
+                  <option value="Vinicius Mendez">Vinicius Mendez</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="text-modal-name-responsavel"
-                  >Nome do Responsável</label
+                  >Nome do responsável</label
                 >
                 <input
                   id="text-modal-name-responsavel"
                   name="text-modal-name-responsavel"
-                  placeholder="João da Silva"
                   type="text"
                   class="form-control"
                 />
-              </div>
-              <div class="form-group">
-                <label for="text-modal-endereco">Endereço Completo</label>
-                <input
-                  id="text-modal-endereco"
-                  name="text-modal-endereco"
-                  placeholder="Rua Juazeiro, 123"
-                  type="text"
-                  class="form-control"
-                />
-              </div>
-              <div class="form-group">
-                <label for="select-modal-bairro-creche">Bairro</label>
-                <div>
-                  <select
-                    id="select-modal-bairro-creche"
-                    name="select-modal-bairro-creche"
-                    class="custom-select"
-                  >
-                    <option value="Centro Norte">Centro Norte</option>
-                    <option value="Centro Sul">Centro Sul</option>
-                    <option value="Bairro das Torres">Bairro das Torres</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="mb-3">
-                  <label for="formFileSm" class="form-label"
-                    >Comprovante de residência</label
-                  >
-                  <input
-                    class="form-control form-control-sm"
-                    id="formFileSm"
-                    type="file"
-                  />
-                </div>
               </div>
             </form>
           </div>
@@ -201,7 +185,7 @@
             >
               Cancelar
             </button>
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="button" class="btn btn-primary">Enviar</button>
           </div>
         </div>
       </div>
@@ -223,5 +207,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>

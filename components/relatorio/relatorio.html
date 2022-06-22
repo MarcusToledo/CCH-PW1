@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Cadastro de creches</title>
+
+    <script>
+      $(function () {
+        $("#navbar").load("/login/styles/navbar/navbar.html");
+      });
+    </script>
+  </head>
+  <header>
+    <div id="navbar"></div>
+  </header>
+  <body>
+    <div class="container">
+      <div class="row col-md-12">
+        <table class="table table-striped custab" id="reportTable">
+          <thead>
+            <a
+              href="../../login/adm/adm.html"
+              class="btn btn-primary btn-md pull-left"
+            >
+              <span class="glyphicon glyphicon-circle-arrow-left"></span>
+              Voltar</a
+            >
+            <button id="exportButton" class="btn btn-primary btn-md pull-right"">
+              <span class="glyphicon glyphicon-file"></span> Gerar relatório</button>
+
+            <!-- <a href="#" class="btn btn-primary btn-md pull-right"
+              ><span class="glyphicon glyphicon-file"></span>Gerar relatório</a
+            > -->
+            <tr>
+              <th>ID</th>
+              <th>Creche</th>
+              <th>Bairro</th>
+              <th class="text-center">VagasOcupadas</th>
+              <th class="text-center">VagasDisponiveis</th>
+
+            </tr>
+          </thead>
+          <tr>
+            <td>1</td>
+            <td>Sonho de Infância</td>
+            <td>Centro Norte</td>
+            <td class="text-center">57</td>
+            <td class="text-center">6</td>
+
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Estrela Cadente</td>
+            <td>Centro Sul</td>
+            <td class="text-center">60</td>
+            <td class="text-center">2</td>
+
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Mundo da Criança</td>
+            <td>Bairro das torres</td>
+            <td class="text-center">90</td>
+            <td class="text-center">10</td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="scripts/scripts.js"></script>
+    <!-- report imports -->
+    <script
+      type="text/javascript"
+      src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://www.shieldui.com/shared/components/latest/js/jszip.min.js"
+    ></script>
+    <!---------------------------------------------------------------->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

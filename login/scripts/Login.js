@@ -15,7 +15,7 @@ function validaLogin(event){
         isLogado = true;
         alert("Bem vindo, Diretor!");
         window.location.href = "login/diretor/diretor.html";
-    } else if (user == "respo1" && pass == "respo1"){
+    } else if (user == "respo" && pass == "respo"){
         isLogado = true;
         alert("Bem vindo, Responsável!");
         window.location.href = "login/responsaveis/respo.html";

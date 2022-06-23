@@ -31,7 +31,7 @@
         <table class="table table-striped custab">
           <thead>
             <a
-              href="../../login/adm/adm.html"
+              href="javascript:history.back()"
               class="btn btn-primary btn-md pull-left"
             >
               <span class="glyphicon glyphicon-circle-arrow-left"></span>
@@ -42,7 +42,7 @@
               href="#"
               class="btn btn-primary btn-md pull-right"
               data-toggle="modal"
-              data-target="#modalValidaEnder"
+              data-target="#modalMatricula"
               ><b>+</b> Adicionar</a
             >
             <tr>
@@ -107,7 +107,7 @@
     <!-- Modal matricula -->
     <div
       class="modal fade"
-      id="modalValidaEnder"
+      id="modalMatricula"
       tabindex="-1"
       role="dialog"
       aria-labelledby="ModalCenterTitle"
@@ -128,6 +128,7 @@
                   class="form-control"
                   onchange="javascript:completaInputs()"
                 >
+                  <option value=" "></option>
                   <option value="Sonho de Infância">Sonho de Infância</option>
                   <option value="Estrela Cadente">Estrela Cadente</option>
                   <option value="Mundo da Criança">Mundo da Criança</option>
@@ -142,6 +143,22 @@
                   class="form-control"
                 />
               </div>
+              <div
+                class="form-group"
+                id="iframe-modal-map-creche"
+                style="display: none"
+              >
+                <iframe
+                  id="iframe-map-creche"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1511.0500759996653!2d-53.059229868386716!3d-25.74072106374234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f047ed3a750d9b%3A0xffbbaf0027f41000!2sCentro%20Norte%2C%20Dois%20Vizinhos%20-%20PR%2C%2085660-000!5e0!3m2!1spt-BR!2sbr!4v1655908211895!5m2!1spt-BR!2sbr"
+                  width="540"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
               <div class="form-group">
                 <label for="select-modal-name-crianca">Criança</label>
                 <select
@@ -150,6 +167,7 @@
                   class="form-control"
                   onchange="javascript:completaInputCrianca()"
                 >
+                  <option value=" "></option>
                   <option value="Joãozinho da Silva">Joãozinho da Silva</option>
                   <option value="Lucas Fernando Souza">
                     Lucas Fernando Souza

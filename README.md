@@ -7,6 +7,7 @@ diretor:diretor
 respo:respo  
 
 ## Stack
-- HTML - Bootstrap
+- HTML
 - CSS
+- Bootstrap
 - Javascript
